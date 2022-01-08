@@ -5,6 +5,7 @@ CREATE TABLE "checklist" (
 );
 
 INSERT INTO "checklist"
+("task")
 VALUES
 ('mop kitchen'),
 ('dust livingroom'),
