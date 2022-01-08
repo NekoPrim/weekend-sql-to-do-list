@@ -12,10 +12,10 @@
     [X] .gitignore 
     [ ] server folder
         [ ] server.js
-            [ ] express, bodyParser, and router require
-            [ ] static files
-            [ ] port local host
-            [ ] source router
+            [X] express, bodyParser, and router require
+            [X] static files
+            [X] port local host
+            [X] source router
         [ ] public folder
             [ ] index.html
                 [ ] source css, jquery, and js
@@ -26,10 +26,10 @@
                 [X] jquery.js
             [X] styles folder
                 [X] style.css
-            [ ] modules folder
-                [ ] pool.js
-                    [ ] pg and pool require
-                    [ ] module.exports
+            [X] modules folder
+                [X] pool.js
+                    [X] pg and pool require
+                    [X] module.exports
             [ ] routers folder
                 [ ] plantGrowth.js
                     [ ] express, router, and pool require
