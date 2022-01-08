@@ -13,10 +13,7 @@ function onReady() {
     getTasks();
 
     // call delete button function on click
-    $(document).on('click', '#updated', deleteTask);
-
-    // call complete button function on click
-    $(document).on('click', '#completedBtn', updateTask);
+    $(document).on('click', '.updated', whichOption);
 }// end onReady
 
 
@@ -93,9 +90,11 @@ function render(response) {
                 <td>${chore.task}</td>
 
                 <td>
-                    <select id="nowDone">
-                        <option value="complete" id="competeOpt"> complete </option>
-                        <option value="delete" id="deleteOpt"> delete </option>
+                    <select id="selector">
+                        <option value="complete" data-rc="complete"> 
+                            complete 
+                        </option>
+                        <option value="delete" data-rc="delete"> delete </option>
                 </td>
 
                 <td>
@@ -109,16 +108,41 @@ function render(response) {
 
 
 
-// function to update task on server side
-function updateTask() {
-    console.log('in updateTask');
+// route options to correct function
+function whichOption() {
+    console.log('in whichOption');
+
+    // capture option value
+    let option = $(this).parents("tr").find("option:selected").attr('data-rc')
+    console.log('option:', option);
 
     // capture id and completed where clicked
     let taskId = $(this).parents("tr").data("id");
     let taskCompleted = $(this).parents("tr").data("completed");
-
-    // check data sent
+    // check data
     console.log('update:', taskId, taskCompleted)
+    
+
+    if (option === 'complete') {
+        updateTask(taskId, taskCompleted);
+    }
+    else if (option === 'delete') {
+        deleteTask(taskId);
+    }
+}// end whichOption
+
+
+
+// function to update task on server side
+function updateTask(taskId, taskCompleted) {
+    console.log('in updateTask', taskId, taskCompleted);
+
+    // // capture id and completed where clicked
+    // let taskId = $(this).parents("tr").data("id");
+    // let taskCompleted = $(this).parents("tr").data("completed");
+
+    // // check data sent
+    // console.log('update:', taskId, taskCompleted)
 
     // ajax PUT function
     // send id and completed true to server side
@@ -142,12 +166,12 @@ function updateTask() {
 
 
 // function to send task id to server side
-function deleteTask() {
-    console.log('in deleteTask');
+function deleteTask(taskId) {
+    console.log('in deleteTask', taskId);
 
-    // capture id where clicked
-    let taskId = $(this).parents("tr").data("id");
-    console.log('task id:', taskId);
+    // // capture id where clicked
+    // let taskId = $(this).parents("tr").data("id");
+    // console.log('task id:', taskId);
 
     // ajax GET function
     // send task id to server side

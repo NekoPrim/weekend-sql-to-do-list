@@ -60,12 +60,14 @@
             [X] url
             [X] .then
             [X] .catch
-        [ ] append to DOM
+        [X] append to DOM
             [X] empty table
             [X] loop and append
-            [ ] complete option
-            [ ] delete option
-        [ ] complete option function
+            [X] complete option
+            [X] delete option
+        [X] option function
+            [X] route option to correct function
+        [X] complete option function
             [X] capture id value
             [X] capture completed boolean
         [X] ajax PUT
@@ -107,5 +109,5 @@
                 [X] .catch
     [ ] style.css
         [ ] bootstrap and sweet alert
-        [ ] complete option changes background to green
+        [ ] completed task changes background to green
     [ ] update README.md
