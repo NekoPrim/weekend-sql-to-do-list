@@ -6,7 +6,7 @@ $(document).ready(onReady);
 function onReady() {
     console.log('lets complete some tasks!');
 
-    // call button function
+    // call button function on click
     $('#taskBtn').on('click', sendTask);
 }
 
@@ -32,19 +32,44 @@ function sendTask() {
             // clear input value
             $('#taskInput').val('');
 
-            // call stored tasks from server side
+            // call tasks from server side
             getTasks();
         })
-        .catch(function(error) {
-            console.log('ajax POST failed!', error);
+        .catch(function(err) {
+
+            // tell client of failure
+            console.log('ajax POST failed!', err);
         });
 }
 
 
-// ajax GET function
+
+// function to receive tasks from the server side
 function getTasks() {
     console.log('in getTasks');
 
+    // ajax GET function
+    $.ajax({
+        method: 'GET',
+        url: '/to-do'
+    })
+        .then(function(response) {
+            console.log('ajax GET response', response);
 
+            // call render function
+            render(response);
+        })
+        .catch((err) => {
+
+            // tell client of failure
+            console.log('ajax GET failure!', err);
+        })
+}
+
+
+
+// function to render tasks to DOM
+function render() {
+    console.log('in render');
 }
 
