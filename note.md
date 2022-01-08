@@ -8,20 +8,20 @@
     [X] pg
     [X] sweetalert2
     <!-- [ ] heroku -->
-[ ] API setup
+[X] API setup
     [X] .gitignore 
-    [ ] server folder
-        [ ] server.js
+    [X] server folder
+        [X] server.js
             [X] express, bodyParser, and router require
             [X] static files
             [X] port local host
             [X] source router
-        [ ] public folder
-            [ ] index.html
-                [ ] source css, jquery, and js
-            [ ] scripts folder
-                [ ] client.js
-                    [ ] jquery setup
+        [X] public folder
+            [X] index.html
+                [X] source css, jquery, and js
+            [X] scripts folder
+                [X] client.js
+                    [X] jquery setup
             [X] venders folder
                 [X] jquery.js
             [X] styles folder
@@ -30,10 +30,10 @@
                 [X] pool.js
                     [X] pg and pool require
                     [X] module.exports
-            [ ] routers folder
-                [ ] plantGrowth.js
-                    [ ] express, router, and pool require
-                    [ ] module.exports
+            [X] routers folder
+                [X] task.router.js
+                    [X] express, router, and pool require
+                    [X] module.exports
     [ ] database.sql
         [ ] create database `weekend-to-do-app`
         [ ] sql code copy
