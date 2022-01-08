@@ -43,7 +43,6 @@ function postTask() {
             getTasks();
         })
         .catch(function(err) {
-
             // tell client of failure
             console.log('ajax POST failed!', err);
         });
@@ -68,7 +67,6 @@ function getTasks() {
             render(response);
         })
         .catch((err) => {
-
             // tell client of failure
             console.log('ajax GET failed!', err);
         })
@@ -114,14 +112,14 @@ function deleteTask() {
     console.log('in deleteTask');
 
     // capture id of row of button clicked on
-    let todo = $(this).parents("tr").data("id");
-    console.log('task id:', todo);
+    let taskId = $(this).parents("tr").data("id");
+    console.log('task id:', taskId);
 
     // ajax GET function
     // send task id to server side
     $.ajax({
         method: 'DELETE',
-        url: `/to-do/${todo}`
+        url: `/to-do/${taskId}`
     })
         .then((res) => {
             console.log('ajax DELETE task:', res);
@@ -130,8 +128,7 @@ function deleteTask() {
             getTasks();
         })
         .catch((err) => {
-            
-            // send failure
+            // tell client of failure
             console.log('ajax DELETE failed!');
-        })
+        });
 }

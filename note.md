@@ -76,11 +76,11 @@
             [ ] .catch
         [X] delete button function
             [X] capture id value
-        [ ] ajax DELETE
-            [ ] method
-            [ ] url
-            [ ] .then
-            [ ] .catch
+        [X] ajax DELETE
+            [X] method
+            [X] url
+            [X] .then
+            [X] .catch
     [ ] task.router.js
         [X] POST
             [X] queryText
