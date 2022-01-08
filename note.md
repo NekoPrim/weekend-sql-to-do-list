@@ -34,11 +34,11 @@
                 [X] task.router.js
                     [X] express, router, and pool require
                     [X] module.exports
-    [ ] database.sql
-        [ ] create database `weekend-to-do-app`
-        [ ] sql code copy
-            [ ] CREATE TABLE
-            [ ] INSERT INTO
+    [X] database.sql
+        [X] create database `weekend-to-do-app`
+        [X] sql code copy
+            [X] CREATE TABLE
+            [X] INSERT INTO
     [ ] postico
         [ ] enter sql code
 [ ] API communication

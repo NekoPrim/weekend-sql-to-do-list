@@ -1,0 +1,12 @@
+body {
+    background-color: bisque;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+}
+
+.taskInputArea {
+    text-align: center;
+}
