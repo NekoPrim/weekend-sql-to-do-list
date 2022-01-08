@@ -19,6 +19,9 @@
         [X] public folder
             [X] index.html
                 [X] source css, jquery, and js
+                [X] input
+                [X] button
+                [X] table
             [X] scripts folder
                 [X] client.js
                     [X] jquery setup
@@ -39,11 +42,69 @@
         [X] sql code copy
             [X] CREATE TABLE
             [X] INSERT INTO
-    [ ] postico
-        [ ] enter sql code
+    [X] postico
+        [X] enter sql code
 [ ] API communication
-    [ ] index.html
     [ ] client.js
-    [ ] plantGrowth.js
+        [X] button function
+            [X] input value
+        [X] ajax POST
+            [X] method
+            [X] url
+            [X] data
+            [X] .then
+            [X] .catch
+        [X] clear input value function
+        [ ] ajax GET
+            [ ] method
+            [ ] url
+            [ ] .then
+            [ ] .catch
+        [ ] append to DOM
+            [ ] empty table
+            [ ] loop and append
+            [ ] complete button
+            [ ] delete button
+        [ ] complete button function
+            [ ] id value
+            [ ] completed value
+        [ ] ajax PUT
+            [ ] method
+            [ ] url
+            [ ] data: true
+            [ ] .then
+            [ ] .catch
+        [ ] delete button function
+            [ ] id value
+        [ ] ajax DELETE
+            [ ] method
+            [ ] url
+            [ ] .then
+            [ ] .catch
+    [ ] task.router.js
+        [ ] POST
+            [ ] queryText
+            [ ] queryParams
+            [ ] pool
+                [ ] .then
+                [ ] .catch
+        [ ] store tasks
+        [ ] GET
+            [ ] queryText
+            [ ] pool
+                [ ] .then
+                [ ] .catch
+        [ ] PUT
+            [ ] queryText
+            [ ] queryParams
+            [ ] pool
+                [ ] .then
+                [ ] .catch
+        [ ] DELETE
+            [ ] queryText
+            [ ] queryParams
+            [ ] pool
+                [ ] .then
+                [ ] .catch
     [ ] style.css
 
