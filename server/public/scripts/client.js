@@ -27,13 +27,14 @@ function postTask() {
     console.log('new task:', newTask);
 
     // ajax POST function
+    // send task to server side
     $.ajax({
         method: 'POST',
         url: '/to-do',
         data: { task: newTask }
     })
         .then(function(response) {
-            console.log('sending:', response);
+            console.log('ajax POST task:', response);
 
             // clear input value
             $('#taskInput').val('');
@@ -55,12 +56,13 @@ function getTasks() {
     console.log('in getTasks');
 
     // ajax GET function
+    // receive tasks from server side
     $.ajax({
         method: 'GET',
         url: '/to-do'
     })
         .then(function(response) {
-            console.log('ajax GET response', response);
+            console.log('ajax GET task:', response);
 
             // call render function
             render(response);
@@ -68,7 +70,7 @@ function getTasks() {
         .catch((err) => {
 
             // tell client of failure
-            console.log('ajax GET failure!', err);
+            console.log('ajax GET failed!', err);
         })
 }
 
@@ -114,4 +116,22 @@ function deleteTask() {
     // capture id of row of button clicked on
     let todo = $(this).parents("tr").data("id");
     console.log('task id:', todo);
+
+    // ajax GET function
+    // send task id to server side
+    $.ajax({
+        method: 'DELETE',
+        url: `/to-do/${todo}`
+    })
+        .then((res) => {
+            console.log('ajax DELETE task:', res);
+
+            // reload task table
+            getTasks();
+        })
+        .catch((err) => {
+            
+            // send failure
+            console.log('ajax DELETE failed!');
+        })
 }
