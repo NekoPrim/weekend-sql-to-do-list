@@ -2,8 +2,7 @@ const express = require("express");
 const taskRouter = express.Router();
 const pool = require("../modules/pool");
 
-// store tasks
-checklist = [];
+
 
 // POST
 taskRouter.post('/', (req, res) => {
@@ -12,7 +11,7 @@ taskRouter.post('/', (req, res) => {
     // prep insert task into database
     // protect database from user
     let queryText = `
-        INSERT INTO "tasks"
+        INSERT INTO "checklist"
             ("task")
         VALUES
             ($1);
@@ -20,7 +19,7 @@ taskRouter.post('/', (req, res) => {
 
     // prep task
     let queryParams = [
-        req.body
+        req.body.task
     ];
 
     // tell database insert task
@@ -31,10 +30,10 @@ taskRouter.post('/', (req, res) => {
         })
         .catch((err) => {
             // tell client failure
-            console.log('POST failed!');
+            console.log('POST failed!', err);
             res.sendStatus(500);
         })
-})
+});
 
 
 

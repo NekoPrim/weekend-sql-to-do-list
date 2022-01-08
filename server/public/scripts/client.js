@@ -24,7 +24,7 @@ function sendTask() {
     $.ajax({
         method: 'POST',
         url: '/to-do',
-        data: newTask
+        data: { task: newTask }
     })
         .then(function(response) {
             console.log('sending:', response);
@@ -45,6 +45,6 @@ function sendTask() {
 function getTasks() {
     console.log('in getTasks');
 
-    
+
 }
 
