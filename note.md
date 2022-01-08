@@ -99,12 +99,12 @@
             [ ] pool
                 [ ] .then
                 [ ] .catch
-        [ ] DELETE
-            [ ] queryText
-            [ ] queryParams
-            [ ] pool
-                [ ] .then
-                [ ] .catch
+        [X] DELETE
+            [X] queryText
+            [X] queryParams
+            [X] pool
+                [X] .then
+                [X] .catch
     [ ] style.css
         [ ] bootstrap and sweet alert
     [ ] update README.md
