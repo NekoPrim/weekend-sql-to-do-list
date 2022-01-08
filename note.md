@@ -46,15 +46,15 @@
         [X] enter sql code
 [ ] API communication
     [ ] client.js
-        [ ] button function
-            [ ] input value
-        [ ] ajax POST
-            [ ] method
-            [ ] url
-            [ ] data
-            [ ] .then
-            [ ] .catch
-        [ ] clear input value function
+        [X] button function
+            [X] input value
+        [X] ajax POST
+            [X] method
+            [X] url
+            [X] data
+            [X] .then
+            [X] .catch
+        [X] clear input value function
         [ ] ajax GET
             [ ] method
             [ ] url
