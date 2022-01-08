@@ -53,13 +53,13 @@
             [X] url
             [X] data
             [X] .then
+                [X] clear input value
             [X] .catch
-        [X] clear input value function
-        [ ] ajax GET
-            [ ] method
-            [ ] url
-            [ ] .then
-            [ ] .catch
+        [X] ajax GET
+            [X] method
+            [X] url
+            [X] .then
+            [X] .catch
         [ ] append to DOM
             [ ] empty table
             [ ] loop and append
@@ -82,18 +82,17 @@
             [ ] .then
             [ ] .catch
     [ ] task.router.js
-        [ ] POST
-            [ ] queryText
-            [ ] queryParams
-            [ ] pool
-                [ ] .then
-                [ ] .catch
-        [ ] store tasks
-        [ ] GET
-            [ ] queryText
-            [ ] pool
-                [ ] .then
-                [ ] .catch
+        [X] POST
+            [X] queryText
+            [X] queryParams
+            [X] pool
+                [X] .then
+                [X] .catch
+        [X] GET
+            [X] queryText
+            [X] pool
+                [X] .then
+                [X] .catch
         [ ] PUT
             [ ] queryText
             [ ] queryParams

@@ -8,7 +8,7 @@ const pool = require("../modules/pool");
 taskRouter.post('/', (req, res) => {
     console.log('sent:', req.body);
 
-    // prep insert task into database
+    // prep command for  database
     // protect database from user
     let queryText = `
         INSERT INTO "checklist"
@@ -31,6 +31,29 @@ taskRouter.post('/', (req, res) => {
         .catch((err) => {
             // tell client failure
             console.log('POST failed!', err);
+            res.sendStatus(500);
+        })
+});
+
+
+
+// GET
+taskRouter.get('/', (req, res) => {
+    console.log('in GET');
+    // res.send(artistList); dont need
+    
+    // prep sql command for database
+    const queryText = 'SELECT * FROM "checklist";';
+    // send sql query to database
+    pool.query(queryText)
+        .then((dbRes) => {
+            console.log(dbRes.rows);
+            // send data back to the client
+            res.send(dbRes.rows);
+        })
+        .catch((err) => {
+            console.log('GET failed!', err);
+            // tell client of failure
             res.sendStatus(500);
         })
 });
