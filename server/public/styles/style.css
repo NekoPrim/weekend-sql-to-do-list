@@ -10,3 +10,23 @@ header {
 .taskInputArea {
     text-align: center;
 }
+
+.taskTableArea {
+    border: 2px solid darkcyan;
+    padding-bottom: 5px;
+    margin: 2rem;
+}
+
+#taskTable {
+    margin: 0 auto;
+    width: 300px;
+}
+
+th {
+    background-color: darkcyan;
+    color: cornsilk;
+}
+
+tr {
+    width: 50px;
+}

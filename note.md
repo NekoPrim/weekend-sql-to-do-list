@@ -47,7 +47,7 @@
 [ ] API communication
     [ ] client.js
         [X] button function
-            [X] input value
+            [X] capture input value
         [X] ajax POST
             [X] method
             [X] url
@@ -60,14 +60,14 @@
             [X] url
             [X] .then
             [X] .catch
-        [ ] append to DOM
-            [ ] empty table
-            [ ] loop and append
-            [ ] complete button
-            [ ] delete button
+        [X] append to DOM
+            [X] empty table
+            [X] loop and append
+            [X] complete button
+            [X] delete button
         [ ] complete button function
-            [ ] id value
-            [ ] completed value
+            [ ] capture id value
+            [ ] capture completed boolean
         [ ] ajax PUT
             [ ] method
             [ ] url
@@ -75,7 +75,7 @@
             [ ] .then
             [ ] .catch
         [ ] delete button function
-            [ ] id value
+            [ ] capture id value
         [ ] ajax DELETE
             [ ] method
             [ ] url
@@ -106,4 +106,4 @@
                 [ ] .then
                 [ ] .catch
     [ ] style.css
-
+    [ ] update README.md
