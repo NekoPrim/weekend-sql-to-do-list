@@ -46,7 +46,7 @@
         [X] enter sql code
 [ ] API communication
     [ ] client.js
-        [X] button function
+        [X] update function
             [X] capture input value
         [X] ajax POST
             [X] method
@@ -60,21 +60,21 @@
             [X] url
             [X] .then
             [X] .catch
-        [X] append to DOM
+        [ ] append to DOM
             [X] empty table
             [X] loop and append
-            [X] complete button
-            [X] delete button
-        [ ] complete button function
-            [ ] capture id value
-            [ ] capture completed boolean
-        [ ] ajax PUT
-            [ ] method
-            [ ] url
-            [ ] data: true
-            [ ] .then
-            [ ] .catch
-        [X] delete button function
+            [ ] complete option
+            [ ] delete option
+        [ ] complete option function
+            [X] capture id value
+            [X] capture completed boolean
+        [X] ajax PUT
+            [X] method
+            [X] url
+            [X] data: true
+            [X] .then
+            [X] .catch
+        [ ] delete option function
             [X] capture id value
         [X] ajax DELETE
             [X] method
@@ -93,12 +93,12 @@
             [X] pool
                 [X] .then
                 [X] .catch
-        [ ] PUT
-            [ ] queryText
-            [ ] queryParams
-            [ ] pool
-                [ ] .then
-                [ ] .catch
+        [X] PUT
+            [X] queryText
+            [X] queryParams
+            [X] pool
+                [X] .then
+                [X] .catch
         [X] DELETE
             [X] queryText
             [X] queryParams
@@ -107,4 +107,5 @@
                 [X] .catch
     [ ] style.css
         [ ] bootstrap and sweet alert
+        [ ] complete option changes background to green
     [ ] update README.md
