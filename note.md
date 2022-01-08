@@ -45,8 +45,8 @@
     [X] postico
         [X] enter sql code
 [ ] API communication
-    [ ] client.js
-        [X] button function
+    [X] client.js
+        [X] update function
             [X] capture input value
         [X] ajax POST
             [X] method
@@ -63,25 +63,27 @@
         [X] append to DOM
             [X] empty table
             [X] loop and append
-            [X] complete button
-            [X] delete button
-        [ ] complete button function
-            [ ] capture id value
-            [ ] capture completed boolean
-        [ ] ajax PUT
-            [ ] method
-            [ ] url
-            [ ] data: true
-            [ ] .then
-            [ ] .catch
-        [X] delete button function
+            [X] complete option
+            [X] delete option
+        [X] option function
+            [X] route option to correct function
+        [X] complete option function
+            [X] capture id value
+            [X] capture completed boolean
+        [X] ajax PUT
+            [X] method
+            [X] url
+            [X] data: true
+            [X] .then
+            [X] .catch
+        [X] delete option function
             [X] capture id value
         [X] ajax DELETE
             [X] method
             [X] url
             [X] .then
             [X] .catch
-    [ ] task.router.js
+    [X] task.router.js
         [X] POST
             [X] queryText
             [X] queryParams
@@ -93,12 +95,12 @@
             [X] pool
                 [X] .then
                 [X] .catch
-        [ ] PUT
-            [ ] queryText
-            [ ] queryParams
-            [ ] pool
-                [ ] .then
-                [ ] .catch
+        [X] PUT
+            [X] queryText
+            [X] queryParams
+            [X] pool
+                [X] .then
+                [X] .catch
         [X] DELETE
             [X] queryText
             [X] queryParams
@@ -106,5 +108,9 @@
                 [X] .then
                 [X] .catch
     [ ] style.css
-        [ ] bootstrap and sweet alert
+        [ ] background color
+        [ ] font-family and size
+        [ ] text color & or background color of tasks (function)
+        <!-- [ ] bootstrap and sweet alert
+        [ ] completed task changes background to green -->
     [ ] update README.md
