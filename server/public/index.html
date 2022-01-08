@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>to-do list</title>
+
+    <script src="./venders/jquery.js" charset="utf-8"></script>
+    <script src="./scripts/client.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="./styles/style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Checklist</h1>
+
+    </header>
+
+    <section class="taskInputArea">
+
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="task to do"
+            required
+        >
+
+        <button type="button" id="taskBtn">
+            Add
+        </button>
+
+    </section>
+
+    <section class="taskTableArea">
+
+        <table id="taskTable">
+            <thead>
+                <tr>
+
+                    <th>To-do</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="tasklist"></tbody>
+        </table>
+
+    </section>
+
+    <section class="completedTableArea">
+
+        <table id="completedTable">
+            <thead>
+                <tr>
+
+                    <th>Completed</th>
+                
+                </tr>
+            </thead>
+
+            <tbody id="completedtask"></tbody>
+        </table>
+
+    </section>
+
+</body>
+
+</html>
