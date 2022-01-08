@@ -63,7 +63,7 @@ taskRouter.get('/', (req, res) => {
 
 // PUT
 taskRouter.put('/:taskId', (req, res) => {
-    console.log('in PUT');
+    console.log('in PUT', req.body);
 
     // prep sql command for database
     // always protect the database
@@ -75,7 +75,7 @@ taskRouter.put('/:taskId', (req, res) => {
 
     // prep id and completed
     let queryParams = [
-        req.body.taskCompleted,
+        req.body.completed,
         req.params.taskId
     ];
 

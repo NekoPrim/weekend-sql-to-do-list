@@ -118,12 +118,15 @@ function updateTask() {
     let taskId = $(this).parents("tr").data("id");
     let taskCompleted = $(this).parents("tr").data("completed");
 
+    // check data sent
+    console.log('update:', taskId, taskCompleted)
+
     // ajax PUT function
     // send id and completed true to server side
     $.ajax({
         method: 'PUT',
         url: `/to-do/${taskId}`,
-        data: { completed: true }
+        data: { completed: !taskCompleted }
     })
         .then(() => {
             console.log('ajax PUT task:', taskId, taskCompleted);
