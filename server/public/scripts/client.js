@@ -72,7 +72,33 @@ function getTasks() {
 
 
 // function to render tasks to DOM
-function render() {
+function render(response) {
     console.log('in render');
+
+    // empty table body
+    $('#taskList').empty();
+
+    // append all tasks to DOM
+    for (let i = 0; i < response.length; i ++) {
+        let item = response[i];
+        $('#taskList').append(`
+            <tr>
+
+                <td>${item.task}</td>
+                <td>${item.completed}</td>
+                <td>
+                    <button id="completedBtn">
+                        Completed
+                    </button>
+                </td>
+                <td>
+                    <button id="completedBtn">
+                        Delete
+                    </button>
+                </td>
+
+            </tr>
+        `);
+    }
 }
 
