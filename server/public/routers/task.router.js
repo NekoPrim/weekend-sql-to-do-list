@@ -44,7 +44,8 @@ taskRouter.get('/', (req, res) => {
     
     // prep sql command for database
     const queryText = 'SELECT * FROM "checklist";';
-    // send sql query to database
+
+    // tell database to select all tasks
     pool.query(queryText)
         .then((dbRes) => {
             console.log(dbRes.rows);
@@ -62,6 +63,34 @@ taskRouter.get('/', (req, res) => {
 
 
 
+// DELETE
+taskRouter.delete('/:taskId', (req, res) => {
+    console.log('in DELETE');
 
+    // check task id
+    console.log('task id:', req.params.taskId);
+
+    // prep command for database
+    // always protect the database
+    let queryText = `
+        DELETE FROM "checklist"
+        WHERE id = $1;
+    `;
+
+    // ready task id
+    let queryParams = [req.params.taskId];
+
+    // tell database to delete task
+    pool.query(queryText, queryParams)
+        .then((dbRes) => {
+            // tell client of success
+            res.sendStatus(201);
+        })
+        .catch((err) => {
+            console.log('DELETE failed');
+            // tell client of failure
+            res.sendStatus(500);
+        })
+})
 
 module.exports = taskRouter;

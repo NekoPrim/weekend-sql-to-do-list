@@ -47,7 +47,7 @@
 [ ] API communication
     [ ] client.js
         [X] button function
-            [X] input value
+            [X] capture input value
         [X] ajax POST
             [X] method
             [X] url
@@ -60,27 +60,27 @@
             [X] url
             [X] .then
             [X] .catch
-        [ ] append to DOM
-            [ ] empty table
-            [ ] loop and append
-            [ ] complete button
-            [ ] delete button
+        [X] append to DOM
+            [X] empty table
+            [X] loop and append
+            [X] complete button
+            [X] delete button
         [ ] complete button function
-            [ ] id value
-            [ ] completed value
+            [ ] capture id value
+            [ ] capture completed boolean
         [ ] ajax PUT
             [ ] method
             [ ] url
             [ ] data: true
             [ ] .then
             [ ] .catch
-        [ ] delete button function
-            [ ] id value
-        [ ] ajax DELETE
-            [ ] method
-            [ ] url
-            [ ] .then
-            [ ] .catch
+        [X] delete button function
+            [X] capture id value
+        [X] ajax DELETE
+            [X] method
+            [X] url
+            [X] .then
+            [X] .catch
     [ ] task.router.js
         [X] POST
             [X] queryText
@@ -99,11 +99,12 @@
             [ ] pool
                 [ ] .then
                 [ ] .catch
-        [ ] DELETE
-            [ ] queryText
-            [ ] queryParams
-            [ ] pool
-                [ ] .then
-                [ ] .catch
+        [X] DELETE
+            [X] queryText
+            [X] queryParams
+            [X] pool
+                [X] .then
+                [X] .catch
     [ ] style.css
-
+        [ ] bootstrap and sweet alert
+    [ ] update README.md

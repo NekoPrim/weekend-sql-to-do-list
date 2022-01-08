@@ -6,17 +6,20 @@ $(document).ready(onReady);
 function onReady() {
     console.log('lets complete some tasks!');
 
-    // call button function on click
-    $('#taskBtn').on('click', sendTask);
+    // call task button function on click
+    $('#taskBtn').on('click', postTask);
 
     // GET stored tasks from database
     getTasks();
+
+    // call delete button function on click
+    $(document).on('click', '#deleteBtn', deleteTask);
 }
 
 
 
 // function to send input to server side
-function sendTask() {
+function postTask() {
     console.log('in onAdd');
 
     // capture input value
@@ -24,13 +27,14 @@ function sendTask() {
     console.log('new task:', newTask);
 
     // ajax POST function
+    // send task to server side
     $.ajax({
         method: 'POST',
         url: '/to-do',
         data: { task: newTask }
     })
         .then(function(response) {
-            console.log('sending:', response);
+            console.log('ajax POST task:', response);
 
             // clear input value
             $('#taskInput').val('');
@@ -39,7 +43,6 @@ function sendTask() {
             getTasks();
         })
         .catch(function(err) {
-
             // tell client of failure
             console.log('ajax POST failed!', err);
         });
@@ -52,20 +55,20 @@ function getTasks() {
     console.log('in getTasks');
 
     // ajax GET function
+    // receive tasks from server side
     $.ajax({
         method: 'GET',
         url: '/to-do'
     })
         .then(function(response) {
-            console.log('ajax GET response', response);
+            console.log('ajax GET task:', response);
 
             // call render function
             render(response);
         })
         .catch((err) => {
-
             // tell client of failure
-            console.log('ajax GET failure!', err);
+            console.log('ajax GET failed!', err);
         })
 }
 
@@ -80,19 +83,19 @@ function render(response) {
 
     // append all tasks to DOM
     for (let i = 0; i < response.length; i ++) {
-        let item = response[i];
+        let chore = response[i];
         $('#taskList').append(`
-            <tr>
+            <tr data-id="${chore.id}">
 
-                <td>${item.task}</td>
-                <td>${item.completed}</td>
+                <td>${chore.task}</td>
+                <td>${chore.completed}</td>
                 <td>
                     <button id="completedBtn">
-                        Completed
+                        Complete
                     </button>
                 </td>
                 <td>
-                    <button id="completedBtn">
+                    <button id="deleteBtn">
                         Delete
                     </button>
                 </td>
@@ -102,3 +105,30 @@ function render(response) {
     }
 }
 
+
+
+// function to send task id to server side
+function deleteTask() {
+    console.log('in deleteTask');
+
+    // capture id of row of button clicked on
+    let taskId = $(this).parents("tr").data("id");
+    console.log('task id:', taskId);
+
+    // ajax GET function
+    // send task id to server side
+    $.ajax({
+        method: 'DELETE',
+        url: `/to-do/${taskId}`
+    })
+        .then((res) => {
+            console.log('ajax DELETE task:', res);
+
+            // reload task table
+            getTasks();
+        })
+        .catch((err) => {
+            // tell client of failure
+            console.log('ajax DELETE failed!');
+        });
+}
