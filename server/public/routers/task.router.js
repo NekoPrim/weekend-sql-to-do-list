@@ -38,22 +38,24 @@ taskRouter.post('/', (req, res) => {
 
 
 // GET
-taskRouter.get('/', (res, req) => {
-
-    // prep command for database
-    const queryText = `SELECT * FROM "checklist";`;
-
-    // tell database to select all tasks
+taskRouter.get('/', (req, res) => {
+    console.log('in GET');
+    // res.send(artistList); dont need
+    
+    // prep sql command for database
+    const queryText = 'SELECT * FROM "checklist";';
+    // send sql query to database
     pool.query(queryText)
         .then((dbRes) => {
+            console.log(dbRes.rows);
+            // send data back to the client
             res.send(dbRes.rows);
         })
         .catch((err) => {
-
-            // tell client of failure
             console.log('GET failed!', err);
+            // tell client of failure
             res.sendStatus(500);
-        });
+        })
 });
 
 

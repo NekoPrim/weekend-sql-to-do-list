@@ -8,6 +8,9 @@ function onReady() {
 
     // call button function on click
     $('#taskBtn').on('click', sendTask);
+
+    // GET stored tasks from database
+    getTasks();
 }
 
 
