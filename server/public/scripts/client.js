@@ -13,7 +13,7 @@ function onReady() {
     getTasks();
 
     // call delete button function on click
-    $(document).on('click', '#deleteBtn', deleteTask);
+    $(document).on('click', '#updated', deleteTask);
 
     // call complete button function on click
     $(document).on('click', '#completedBtn', updateTask);
@@ -89,18 +89,17 @@ function render(response) {
         let chore = response[i];
         $('#taskList').append(`
             <tr data-id="${chore.id}" data-completed="${chore.completed}">
-
+                
                 <td>${chore.task}</td>
-                <td>${chore.completed}</td>
+
                 <td>
-                    <button id="completedBtn">
-                        Complete
-                    </button>
+                    <select id="nowDone">
+                        <option value="complete" id="competeOpt"> complete </option>
+                        <option value="delete" id="deleteOpt"> delete </option>
                 </td>
+
                 <td>
-                    <button id="deleteBtn">
-                        Delete
-                    </button>
+                    <button class="updated"> update </button>
                 </td>
 
             </tr>
