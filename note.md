@@ -55,11 +55,11 @@
             [X] .then
                 [X] clear input value
             [X] .catch
-        [ ] ajax GET
-            [ ] method
-            [ ] url
-            [ ] .then
-            [ ] .catch
+        [X] ajax GET
+            [X] method
+            [X] url
+            [X] .then
+            [X] .catch
         [ ] append to DOM
             [ ] empty table
             [ ] loop and append
@@ -88,11 +88,11 @@
             [X] pool
                 [X] .then
                 [X] .catch
-        [ ] GET
-            [ ] queryText
-            [ ] pool
-                [ ] .then
-                [ ] .catch
+        [X] GET
+            [X] queryText
+            [X] pool
+                [X] .then
+                [X] .catch
         [ ] PUT
             [ ] queryText
             [ ] queryParams
