@@ -53,8 +53,8 @@
             [X] url
             [X] data
             [X] .then
+                [X] clear input value
             [X] .catch
-        [X] clear input value function
         [ ] ajax GET
             [ ] method
             [ ] url
@@ -82,13 +82,12 @@
             [ ] .then
             [ ] .catch
     [ ] task.router.js
-        [ ] POST
-            [ ] queryText
-            [ ] queryParams
-            [ ] pool
-                [ ] .then
-                [ ] .catch
-        [ ] store tasks
+        [X] POST
+            [X] queryText
+            [X] queryParams
+            [X] pool
+                [X] .then
+                [X] .catch
         [ ] GET
             [ ] queryText
             [ ] pool
