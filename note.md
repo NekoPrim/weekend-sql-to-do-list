@@ -45,7 +45,7 @@
     [X] postico
         [X] enter sql code
 [ ] API communication
-    [ ] client.js
+    [X] client.js
         [X] update function
             [X] capture input value
         [X] ajax POST
@@ -76,14 +76,14 @@
             [X] data: true
             [X] .then
             [X] .catch
-        [ ] delete option function
+        [X] delete option function
             [X] capture id value
         [X] ajax DELETE
             [X] method
             [X] url
             [X] .then
             [X] .catch
-    [ ] task.router.js
+    [X] task.router.js
         [X] POST
             [X] queryText
             [X] queryParams
@@ -108,6 +108,9 @@
                 [X] .then
                 [X] .catch
     [ ] style.css
-        [ ] bootstrap and sweet alert
-        [ ] completed task changes background to green
+        [ ] background color
+        [ ] font-family and size
+        [ ] text color & or background color of tasks (function)
+        <!-- [ ] bootstrap and sweet alert
+        [ ] completed task changes background to green -->
     [ ] update README.md
