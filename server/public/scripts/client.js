@@ -14,7 +14,10 @@ function onReady() {
 
     // call delete button function on click
     $(document).on('click', '#deleteBtn', deleteTask);
-}
+
+    // call complete button function on click
+    $(document).on('click', '#completedBtn', updateTask);
+}// end onReady
 
 
 
@@ -46,7 +49,7 @@ function postTask() {
             // tell client of failure
             console.log('ajax POST failed!', err);
         });
-}
+}// end postTask
 
 
 
@@ -70,7 +73,7 @@ function getTasks() {
             // tell client of failure
             console.log('ajax GET failed!', err);
         })
-}
+}// end getTasks
 
 
 
@@ -85,7 +88,7 @@ function render(response) {
     for (let i = 0; i < response.length; i ++) {
         let chore = response[i];
         $('#taskList').append(`
-            <tr data-id="${chore.id}">
+            <tr data-id="${chore.id}" data-completed="${chore.completed}">
 
                 <td>${chore.task}</td>
                 <td>${chore.completed}</td>
@@ -103,7 +106,36 @@ function render(response) {
             </tr>
         `);
     }
-}
+}// end render
+
+
+
+// function to update task on server side
+function updateTask() {
+    console.log('in updateTask');
+
+    // capture id and completed where clicked
+    let taskId = $(this).parents("tr").data("id");
+    let taskCompleted = $(this).parents("tr").data("completed");
+
+    // ajax PUT function
+    // send id and completed true to server side
+    $.ajax({
+        method: 'PUT',
+        url: `/to-do/${taskId}`,
+        data: { completed: true }
+    })
+        .then(() => {
+            console.log('ajax PUT task:', taskId, taskCompleted);
+
+            // reload task table
+            getTasks();
+        })
+        .catch((err) => {
+            // tell client of failure
+            console.log('ajax PUT failed!', err);
+        });
+}// end updateTask
 
 
 
@@ -111,7 +143,7 @@ function render(response) {
 function deleteTask() {
     console.log('in deleteTask');
 
-    // capture id of row of button clicked on
+    // capture id where clicked
     let taskId = $(this).parents("tr").data("id");
     console.log('task id:', taskId);
 
@@ -131,4 +163,4 @@ function deleteTask() {
             // tell client of failure
             console.log('ajax DELETE failed!');
         });
-}
+}// end deleteTask

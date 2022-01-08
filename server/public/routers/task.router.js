@@ -8,7 +8,7 @@ const pool = require("../modules/pool");
 taskRouter.post('/', (req, res) => {
     console.log('sent:', req.body);
 
-    // prep command for  database
+    // prep sql command for  database
     // protect database from user
     let queryText = `
         INSERT INTO "checklist"
@@ -32,8 +32,8 @@ taskRouter.post('/', (req, res) => {
             // tell client failure
             console.log('POST failed!', err);
             res.sendStatus(500);
-        })
-});
+        });
+});// end POST
 
 
 
@@ -56,10 +56,43 @@ taskRouter.get('/', (req, res) => {
             console.log('GET failed!', err);
             // tell client of failure
             res.sendStatus(500);
+        });
+});// end GET
+
+
+
+// PUT
+taskRouter.put('/:taskId', (req, res) => {
+    console.log('in PUT');
+
+    // prep sql command for database
+    // always protect the database
+    let queryText = `
+        UPDATE "checklist"
+        SET "completed" = $1
+        WHERE "id" = $2;
+    `;
+
+    // prep id and completed
+    let queryParams = [
+        req.body.taskCompleted,
+        req.params.taskId
+    ];
+
+    console.log('update:', queryParams);
+
+    // tell database to update task
+    pool.query(queryText, queryParams)
+        .then((dbRes) => {
+            // tell client of success
+            res.sendStatus(201);
         })
+        .catch((err) => {
+            console.log('PUT failed');
+            // tell client of failure
+            res.sendStatus(500);
+        });
 });
-
-
 
 
 
@@ -70,7 +103,7 @@ taskRouter.delete('/:taskId', (req, res) => {
     // check task id
     console.log('task id:', req.params.taskId);
 
-    // prep command for database
+    // prep sql command for database
     // always protect the database
     let queryText = `
         DELETE FROM "checklist"
@@ -90,7 +123,9 @@ taskRouter.delete('/:taskId', (req, res) => {
             console.log('DELETE failed');
             // tell client of failure
             res.sendStatus(500);
-        })
-})
+        });
+});// end DELETE
+
+
 
 module.exports = taskRouter;
