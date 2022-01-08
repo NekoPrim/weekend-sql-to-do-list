@@ -6,17 +6,20 @@ $(document).ready(onReady);
 function onReady() {
     console.log('lets complete some tasks!');
 
-    // call button function on click
-    $('#taskBtn').on('click', sendTask);
+    // call task button function on click
+    $('#taskBtn').on('click', postTask);
 
     // GET stored tasks from database
     getTasks();
+
+    // call delete button function on click
+    $(document).on('click', '#deleteBtn', deleteTask);
 }
 
 
 
 // function to send input to server side
-function sendTask() {
+function postTask() {
     console.log('in onAdd');
 
     // capture input value
@@ -80,19 +83,19 @@ function render(response) {
 
     // append all tasks to DOM
     for (let i = 0; i < response.length; i ++) {
-        let item = response[i];
+        let chore = response[i];
         $('#taskList').append(`
-            <tr>
+            <tr data-id="${chore.id}">
 
-                <td>${item.task}</td>
-                <td>${item.completed}</td>
+                <td>${chore.task}</td>
+                <td>${chore.completed}</td>
                 <td>
                     <button id="completedBtn">
-                        Completed
+                        Complete
                     </button>
                 </td>
                 <td>
-                    <button id="completedBtn">
+                    <button id="deleteBtn">
                         Delete
                     </button>
                 </td>
@@ -102,3 +105,13 @@ function render(response) {
     }
 }
 
+
+
+// function to send task id to server side
+function deleteTask() {
+    console.log('in deleteTask');
+
+    // capture id of row of button clicked on
+    let todo = $(this).parents("tr").data("id");
+    console.log('task id:', todo);
+}

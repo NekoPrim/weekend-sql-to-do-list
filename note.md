@@ -74,8 +74,8 @@
             [ ] data: true
             [ ] .then
             [ ] .catch
-        [ ] delete button function
-            [ ] capture id value
+        [X] delete button function
+            [X] capture id value
         [ ] ajax DELETE
             [ ] method
             [ ] url
@@ -106,4 +106,5 @@
                 [ ] .then
                 [ ] .catch
     [ ] style.css
+        [ ] bootstrap and sweet alert
     [ ] update README.md
