@@ -1,6 +1,6 @@
 CREATE TABLE "checklist" (
     "id" SERIAL PRIMARY KEY,
-    "task" VARCHAR(255),
+    "task" VARCHAR(255) ,
     "completed" BOOLEAN DEFAULT FALSE
 );
 

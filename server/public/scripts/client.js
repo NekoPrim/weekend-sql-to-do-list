@@ -96,7 +96,12 @@ function render(response) {
                 <td>
                     <select id="selector">
                     </option>
-                        <option value="delete" data-rc="delete"> delete </option>
+                        <option value="complete" data-rc="complete"> 
+                            NOT complete 
+                        </option>
+                        <option value="delete" data-rc="delete"> 
+                            delete 
+                        </option>
                 </td>
 
                 <td>
@@ -104,9 +109,11 @@ function render(response) {
                 </td>
 
             </tr>
+            
             `);
-            $('#taskList').parents("tr").css( { "background-color": "palegreen" } )
+            $('#taskList').css( { "background-color": "palegreen !important" } );
             }
+
             else {
             $('#taskList').append(`
                 <tr data-id="${chore.id}" data-completed="${chore.completed}">
@@ -120,7 +127,9 @@ function render(response) {
                             <option value="complete" data-rc="complete"> 
                                 complete 
                             </option>
-                            <option value="delete" data-rc="delete"> delete </option>
+                            <option value="delete" data-rc="delete"> 
+                                delete 
+                            </option>
                     </td>
 
                     <td>
@@ -130,9 +139,9 @@ function render(response) {
                 </tr>
                 `);
             }
-        if (chore.completed) {
-            $(this).parents("tr").css( { "background-color": "palegreen" } )
-        }
+        // if (chore.completed) {
+            // $(this).parents("tr").css( { "background-color": "palegreen" } )
+        // }
     }
 }// end render
 
