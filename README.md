@@ -1,9 +1,11 @@
-# Project Name
+# Weekend SQL To-Do List
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Keep track of your weekend tasks with this easy checklist! When your done you can update your task to complete and move onto the next.
+
+[Project Instructions](./INSTRUCTIONS.md)
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Created an API to-do list.  The front end has a tasks input area. When a new task is entered, it is added to the database and posted to the DOM. Each task has the option to be completed or deleted. If a task is completed, it will update to a green background with a check mark. If the option delete is selected, the task will be removed from the DOM and database.
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
