@@ -100,7 +100,7 @@ function render(response) {
                 <td>
                     <select id="selector">
                     </option>
-                        <option value="complete" data-rc="complete"> 
+                        <option value="notComplete" data-rc="complete"> 
                             NOT complete 
                         </option>
                         <option value="delete" data-rc="delete"> 

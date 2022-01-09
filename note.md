@@ -44,7 +44,7 @@
             [X] INSERT INTO
     [X] postico
         [X] enter sql code
-[ ] API communication
+[X] API communication
     [X] client.js
         [X] update function
             [X] capture input value
@@ -107,10 +107,10 @@
             [X] pool
                 [X] .then
                 [X] .catch
-    [ ] style.css
+    [X] style.css
         [X] background color
         [X] font-family and size
-        [ ] text color & or background color of tasks (function)
+        [X] text color & or background color of tasks (function)
         <!-- [ ] bootstrap and sweet alert
         [ ] completed task changes background to green -->
-    [ ] update README.md
+    [X] update README.md
