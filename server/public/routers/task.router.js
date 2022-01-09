@@ -43,7 +43,7 @@ taskRouter.get('/', (req, res) => {
     // res.send(artistList); dont need
     
     // prep sql command for database
-    const queryText = 'SELECT * FROM "checklist";';
+    const queryText = 'SELECT * FROM "checklist" ORDER BY "id" ASC;';
 
     // tell database to select all tasks
     pool.query(queryText)

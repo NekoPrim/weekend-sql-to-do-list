@@ -84,16 +84,18 @@ function render(response) {
     // append all tasks to DOM
     for (let i = 0; i < response.length; i ++) {
         let chore = response[i];
-        $('#taskList').append(`
+        let completed = chore.completed
+        if (completed === true) {
+            $('#taskList').append(`
             <tr data-id="${chore.id}" data-completed="${chore.completed}">
                 
-                <td>${chore.task}</td>
+                <td>
+                    \u2713 ${chore.task}
+                </td>
 
                 <td>
                     <select id="selector">
-                        <option value="complete" data-rc="complete"> 
-                            complete 
-                        </option>
+                    </option>
                         <option value="delete" data-rc="delete"> delete </option>
                 </td>
 
@@ -102,7 +104,35 @@ function render(response) {
                 </td>
 
             </tr>
-        `);
+            `);
+            $('#taskList').parents("tr").css( { "background-color": "palegreen" } )
+            }
+            else {
+            $('#taskList').append(`
+                <tr data-id="${chore.id}" data-completed="${chore.completed}">
+                
+                    <td>
+                        ${chore.task}
+                    </td>
+
+                    <td>
+                        <select id="selector">
+                            <option value="complete" data-rc="complete"> 
+                                complete 
+                            </option>
+                            <option value="delete" data-rc="delete"> delete </option>
+                    </td>
+
+                    <td>
+                        <button class="updated"> update </button>
+                    </td>
+
+                </tr>
+                `);
+            }
+        if (chore.completed) {
+            $(this).parents("tr").css( { "background-color": "palegreen" } )
+        }
     }
 }// end render
 
@@ -116,15 +146,17 @@ function whichOption() {
     let option = $(this).parents("tr").find("option:selected").attr('data-rc')
     console.log('option:', option);
 
-    // capture id and completed where clicked
+    // capture id and completed values
     let taskId = $(this).parents("tr").data("id");
     let taskCompleted = $(this).parents("tr").data("completed");
     // check data
     console.log('update:', taskId, taskCompleted)
+
+    let row = $(this)
     
 
     if (option === 'complete') {
-        updateTask(taskId, taskCompleted);
+        updateTask(taskId, taskCompleted, row);
     }
     else if (option === 'delete') {
         deleteTask(taskId);
@@ -134,15 +166,8 @@ function whichOption() {
 
 
 // function to update task on server side
-function updateTask(taskId, taskCompleted) {
+function updateTask(taskId, taskCompleted, row) {
     console.log('in updateTask', taskId, taskCompleted);
-
-    // // capture id and completed where clicked
-    // let taskId = $(this).parents("tr").data("id");
-    // let taskCompleted = $(this).parents("tr").data("completed");
-
-    // // check data sent
-    // console.log('update:', taskId, taskCompleted)
 
     // ajax PUT function
     // send id and completed true to server side
@@ -169,10 +194,6 @@ function updateTask(taskId, taskCompleted) {
 function deleteTask(taskId) {
     console.log('in deleteTask', taskId);
 
-    // // capture id where clicked
-    // let taskId = $(this).parents("tr").data("id");
-    // console.log('task id:', taskId);
-
     // ajax GET function
     // send task id to server side
     $.ajax({
@@ -190,3 +211,9 @@ function deleteTask(taskId) {
             console.log('ajax DELETE failed!');
         });
 }// end deleteTask
+
+
+
+function onChange() {
+    $(this).parents("tr").css( { "background-color": "palegreen" } );
+}

@@ -108,8 +108,8 @@
                 [X] .then
                 [X] .catch
     [ ] style.css
-        [ ] background color
-        [ ] font-family and size
+        [X] background color
+        [X] font-family and size
         [ ] text color & or background color of tasks (function)
         <!-- [ ] bootstrap and sweet alert
         [ ] completed task changes background to green -->

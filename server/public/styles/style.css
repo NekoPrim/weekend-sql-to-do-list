@@ -1,32 +1,54 @@
 body {
     background-color: bisque;
+    font-family: 'Shadows Into Light', cursive;
     margin: 0 auto;
 }
 
 header {
+    background-color: cornsilk;
+    border-bottom: 2px solid darkcyan;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    margin: 0 auto;
+    padding-top: 1em;
     text-align: center;
 }
 
 .taskInputArea {
+    background-color: cornsilk;
+    border: 2px solid darkcyan;
+    margin: 1rem 20rem 1rem 20rem;
+    padding: 2rem 0 2rem 0;
     text-align: center;
 }
 
-.taskTableArea {
-    border: 2px solid darkcyan;
-    padding-bottom: 5px;
-    margin: 2rem;
-}
-
 #taskTable {
+    border-collapse: collapse;
+    font-size: 20px;
     margin: 0 auto;
-    width: 300px;
+    width: 100%;
 }
 
 th {
     background-color: darkcyan;
     color: cornsilk;
+    font-size: 30px;
 }
 
 tr {
-    width: 50px;
+    width: 150px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: cornsilk;
+}
+
+button, option {
+    background-color: darkcyan;
+    color: cornsilk;
+}
+
+#taskBtn {
+    font-size: 20px;
 }
