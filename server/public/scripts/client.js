@@ -87,11 +87,15 @@ function render(response) {
         let completed = chore.completed
         if (completed === true) {
             $('#taskList').append(`
-            <tr data-id="${chore.id}" data-completed="${chore.completed}">
+            <tr 
+                class="row"
+                data-id="${chore.id}" 
+                data-completed="${chore.completed}"
+                >
                 
-                <td>
+                <td><strong>
                     \u2713 ${chore.task}
-                </td>
+                </strong></td>
 
                 <td>
                     <select id="selector">
@@ -111,7 +115,6 @@ function render(response) {
             </tr>
             
             `);
-            $('#taskList').css( { "background-color": "palegreen !important" } );
             }
 
             else {
@@ -139,9 +142,6 @@ function render(response) {
                 </tr>
                 `);
             }
-        // if (chore.completed) {
-            // $(this).parents("tr").css( { "background-color": "palegreen" } )
-        // }
     }
 }// end render
 
