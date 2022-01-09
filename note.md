@@ -113,4 +113,4 @@
         [X] text color & or background color of tasks (function)
         <!-- [ ] bootstrap and sweet alert
         [ ] completed task changes background to green -->
-    [ ] update README.md
+    [X] update README.md
