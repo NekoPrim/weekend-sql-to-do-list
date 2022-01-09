@@ -1,6 +1,6 @@
 # Weekend SQL To-Do List
 
-Keep track of your weekend tasks with this easy checklist! When your done you can update your task to complete and move onto the next.
+Keep track of your weekend tasks with this easy checklist! When your done you can update your task to complete and move onto the next. This aesthetic API will help you make your chores no more!
 
 [Project Instructions](./INSTRUCTIONS.md)
 
