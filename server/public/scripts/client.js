@@ -161,9 +161,6 @@ function whichOption() {
     // check data
     console.log('update:', taskId, taskCompleted)
 
-    let row = $(this)
-    
-
     if (option === 'complete') {
         updateTask(taskId, taskCompleted, row);
     }
