@@ -162,7 +162,7 @@ function whichOption() {
     console.log('update:', taskId, taskCompleted)
 
     if (option === 'complete') {
-        updateTask(taskId, taskCompleted, row);
+        updateTask(taskId, taskCompleted);
     }
     else if (option === 'delete') {
         deleteTask(taskId);
